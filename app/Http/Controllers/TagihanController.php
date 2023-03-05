@@ -39,11 +39,8 @@ class TagihanController extends Controller
         ])->post('https://api.xendit.co/v2/invoices', [
             'external_id' => $external_id,
             'amount' => request('amount'),
-            'fees' => [
-                [
-                    'type' => 'admin',
-                    'value' => 2000
-                ]
+            'payment_methods' => [
+                'BCA', 'QRIS', 'OVO'
             ]
         ]);
 
